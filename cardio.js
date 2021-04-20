@@ -53,3 +53,23 @@ function reverseInt(int) {
     const revString = int.toString().split('').reverse().join('');
     return parseInt(revString) * Math.sign(int);
 }
+
+function capitalizeLetters(str) {
+    // const strArr = str.toLowerCase().split(' ');
+
+    // for (let i = 0; i < strArr.length; i++){
+    //     strArr[i] = strArr[i].substring(0, 1).toUpperCase() + strArr[i].substring(1);
+    // }
+
+    // return strArr.join(' ');
+    ///////////////////////////////////
+
+    // return str
+    // .toLowerCase()
+    // .split('')
+    // .map(word => word[0].toUpperCase() + word.substr(1))
+    // ,join(' ');
+    /////////////////////////////////////
+
+    return str.replace(/\b[a-z]/gi, (char) => char.toUpperCase());
+}
