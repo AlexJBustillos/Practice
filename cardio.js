@@ -42,3 +42,9 @@ function reverseString(str) {
     return str.split('').reduce((revString, char) => char + revString
     , '');
 }
+
+function isPalindrome(str) {
+    const revString = str.split('').reverse().join('');
+
+    return revString === str;
+}
