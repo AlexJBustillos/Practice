@@ -14,8 +14,20 @@
 
 ////////////////////////////////////////////////////////////
 
+
 // songDecoder("WUBWEWUBAREWUBWUBTHEWUBCHAMPIONSWUBMYWUBFRIENDWUB") => WE ARE THE CHAMPIONS
 
-const songDecoder = (song) => song.replace(/(WUB)+/g, " ").trim()
+// const songDecoder = (song) => song.replace(/(WUB)+/g, " ").trim()
 
-console.log(songDecoder("AWUBBWUBC"));
+// console.log(songDecoder("AWUBBWUBC"));
+
+////////////////////////////////////////////////////////////
+
+
+const sumTwoSmallestNumbers = (numbers) => {
+    const [firstNumber, secondNumber] = numbers.sort((a, b) => a - b);
+    return firstNumber + secondNumber;
+}
+
+const numbers = [19, 5, 42, 2, 77]
+console.log(sumTwoSmallestNumbers(numbers));
