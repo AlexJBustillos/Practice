@@ -36,16 +36,42 @@
 ////////////////////////////////////////////////////////////
 
 
-const alphabet = ("abcdefghijklmnopqrstuvwxyz").split("");
+// const alphabet = ("abcdefghijklmnopqrstuvwxyz").split("");
 
-const alphabetPosition = (text) => {
-    // alphabet.indexOf()
-    return text
-    .toLowerCase()
-    .replace(/[^a-zA-Z]/g, "")
-    .split("")
-    .map((letter) => alphabet.indexOf(letter) + 1)
-    .join(' '); 
+// const alphabetPosition = (text) => {
+//     // alphabet.indexOf()
+//     return text
+//     .toLowerCase()
+//     .replace(/[^a-zA-Z]/g, "")
+//     .split("")
+//     .map((letter) => alphabet.indexOf(letter) + 1)
+//     .join(' '); 
+// }
+
+// console.log(alphabetPosition("The sunset sets at twelve o'clock."));
+
+const getCount = (str) => {
+    // var vowelsCount = 0;
+    // for (const letter of str) {
+    //     if (
+    //         letter === "a" || 
+    //         letter === "e" || 
+    //         letter === "i" || 
+    //         letter === "o" || 
+    //         letter === "u") {
+    //             vowelsCount++;
+    //     }
+
+    // }
+    // return vowelsCount;
+
+    let vowelCount = 0;
+    for (const letter of str) {
+        if(letter.match(/[aeiou]/g)) {
+            vowelCount++;
+        }
+    }
+    return vowelCount;
 }
 
-console.log(alphabetPosition("The sunset sets at twelve o'clock."));
+console.log(getCount("abracadabra"));
