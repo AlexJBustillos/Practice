@@ -51,27 +51,17 @@
 // console.log(alphabetPosition("The sunset sets at twelve o'clock."));
 
 const getCount = (str) => {
-    // var vowelsCount = 0;
+    return (str.match(/[aeiou]/gi) || []).length;
+    
+    // return str.split("").reduce((acc, letter) => (letter.match(/[aeiou]/g) ? acc + 1 : acc), 0);
+
+    // let vowelCount = 0;
     // for (const letter of str) {
-    //     if (
-    //         letter === "a" || 
-    //         letter === "e" || 
-    //         letter === "i" || 
-    //         letter === "o" || 
-    //         letter === "u") {
-    //             vowelsCount++;
+    //     if(letter.match(/[aeiou]/g)) {
+    //         vowelCount++;
     //     }
-
     // }
-    // return vowelsCount;
-
-    let vowelCount = 0;
-    for (const letter of str) {
-        if(letter.match(/[aeiou]/g)) {
-            vowelCount++;
-        }
-    }
-    return vowelCount;
-}
+    // return vowelCount;
+};
 
 console.log(getCount("abracadabra"));
