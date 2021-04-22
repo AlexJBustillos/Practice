@@ -24,10 +24,28 @@
 ////////////////////////////////////////////////////////////
 
 
-const sumTwoSmallestNumbers = (numbers) => {
-    const [firstNumber, secondNumber] = numbers.sort((a, b) => a - b);
-    return firstNumber + secondNumber;
+// const sumTwoSmallestNumbers = (numbers) => {
+//     const [firstNumber, secondNumber] = numbers.sort((a, b) => a - b);
+//     return firstNumber + secondNumber;
+// }
+
+// const numbers = [19, 5, 42, 2, 77]
+// console.log(sumTwoSmallestNumbers(numbers));
+
+
+////////////////////////////////////////////////////////////
+
+
+const alphabet = ("abcdefghijklmnopqrstuvwxyz").split("");
+
+const alphabetPosition = (text) => {
+    // alphabet.indexOf()
+    return text
+    .toLowerCase()
+    .replace(/[^a-zA-Z]/g, "")
+    .split("")
+    .map((letter) => alphabet.indexOf(letter) + 1)
+    .join(' '); 
 }
 
-const numbers = [19, 5, 42, 2, 77]
-console.log(sumTwoSmallestNumbers(numbers));
+console.log(alphabetPosition("The sunset sets at twelve o'clock."));
