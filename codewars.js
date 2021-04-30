@@ -28,13 +28,21 @@
 /////////////////////////////////////////////////////////////////
 
 const arrayDiff = (a, b) => {
-    newArr = []
-    for (i = 0; i < a.length; i++) {
-        for (j = 0; j < b.length; j++) {
-            if (a[i] != a[j] || b === []) {
-                newArr.push(a[i])
-            }
+    let unique = [];
+
+
+
+    for (let i = 0; i < a.length; i++){
+        if (b.indexOf(a[i]) === -1) {
+            unique.push(a[i]);
         }
     }
-    return newArr
+    for (let i = 0; i < b.length; i++){
+        if (b.indexOf(b[i]) === -1) {
+            unique.push(b[i]);
+        }
+    }
+    return unique;
+
+    // return a.filter(e => !b.includes(e))
 }
