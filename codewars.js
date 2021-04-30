@@ -20,7 +20,21 @@
 
 // console.log(isPangram("The quick brown fox jumps over the lazy dog."));
 
-const findOdd = (A) => {
+// const findOdd = (A) => {
     
-    return 0
+//     return 0
+// }
+
+/////////////////////////////////////////////////////////////////
+
+const arrayDiff = (a, b) => {
+    newArr = []
+    for (i = 0; i < a.length; i++) {
+        for (j = 0; j < b.length; j++) {
+            if (a[i] != a[j] || b === []) {
+                newArr.push(a[i])
+            }
+        }
+    }
+    return newArr
 }
