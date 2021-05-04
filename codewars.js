@@ -46,3 +46,7 @@ const arrayDiff = (a, b) => {
 
     // return a.filter(e => !b.includes(e))
 }
+
+songDecoder("WUBWEWUBAREWUBWUBTHEWUBCHAMPIONSWUBMYWUBFRIENDWUB") //=> WE ARE THE CHAMPIONS
+
+const songDecoder = (song) => song.replace(/(WUB)+/g, " ").trim()
