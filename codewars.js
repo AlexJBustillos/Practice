@@ -52,15 +52,45 @@ const arrayDiff = (a, b) => {
 // const songDecoder = (song) => song.replace(/(WUB)+/g, " ").trim()
 
 
-const rgb = (r, g, b) => {
-    function decToHex(c) {
-        if (c > 255) return "FF";
-        else if (c < 0) return "00";
-        else
-            return c
-                .toString(16)
-                .padStart(2, "0")
-                .toUpperCase()        
+// const rgb = (r, g, b) => {
+//     function decToHex(c) {
+//         if (c > 255) return "FF";
+//         else if (c < 0) return "00";
+//         else
+//             return c
+//                 .toString(16)
+//                 .padStart(2, "0")
+//                 .toUpperCase()        
+//     }
+//     return decToHex(r) + decToHex(g) + decToHex(b);
+// }
+
+////////////////////////////////////////////////////////
+
+const validBraces = (braces) => {
+    // let tracer = []
+    // for(let i=0;i < braces.length; i++){
+    //     if ( braces[i] === "(" || braces[i] === "{" || braces[i] === "["){
+    //         tracer.push(braces[i])
+    //     } else{
+    //         if(tracer.length === 0) return false
+    //         let lastValue = tracer[tracer.length-1]
+    //         if( (braces[i] === ']' && lastValue === '[') || (braces[i] === '}' && lastValue === '{') || (braces[i] === ')' && lastValue === '('))
+    //         {
+    //             tracer.pop()
+    //         } else {
+    //             break;
+    //         }
+    //     }
+    // }
+    // return tracer.length === 0
+    let prev = "";
+    while (braces.length != prev.length) {
+        prev = braces;
+        braces = braces
+            .replace("()", "")
+            .replace("[]", "")
+            .replace("{}", "");
     }
-    return decToHex(r) + decToHex(g) + decToHex(b);
+    return (braces.length === 0);
 }
