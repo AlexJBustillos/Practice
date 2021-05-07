@@ -17,14 +17,23 @@
 //         selectDiv.textContent += `${e.code}`
 // }
 
-// function isEmpty( el ){
-//     return !$.trim(el.html())
+// function isHeaderEmpty() {
+//     const headerObject = $(":header")
+//     for (const property in headerObject) {
+//         if (headerObject[property].innerHTML === "") {
+//             headerObject[property].setAttribute("role", "presentation")
+//         }
+//     }
 // }
-function emptyHeader() {
-    if ($(":header").html().length === 0 ) {
-        $(":header").attr("role", "presentation")
-    }
 
+function theFinalCountdown(a, b) {
+    let countdown = a + b;
+    let time = setInterval(() => {
+        if (countdown === 0) {
+            clearInterval(time)
+        }
+        console.log(countdown);
+        countdown--
+    }, 1000)
 }
-
-// $(":header").is($(":empty"))
+theFinalCountdown(5, 5)
