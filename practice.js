@@ -26,14 +26,27 @@
 //     }
 // }
 
-function theFinalCountdown(a, b) {
-    let countdown = a + b;
-    let time = setInterval(() => {
-        if (countdown === 0) {
-            clearInterval(time)
+// function theFinalCountdown(a, b) {
+//     let countdown = a + b;
+//     let time = setInterval(() => {
+//         if (countdown === 0) {
+//             clearInterval(time)
+//         }
+//         console.log(countdown);
+//         countdown--
+//     }, 1000)
+// }
+// theFinalCountdown(5, 5)
+
+const firstNonRepeatingLetter = (s) => {
+    let lowercase = s.toLowerCase()
+    let repeat = []
+    // let unique = []
+    for (i = 0; i < lowercase.length; i++) {
+        if (lowercase[i] != lowercase[i]) {
+            return lowercase[i]
+        } else if (lowercase.length === 0){
+            return lowercase[0]
         }
-        console.log(countdown);
-        countdown--
-    }, 1000)
+    }
 }
-theFinalCountdown(5, 5)
