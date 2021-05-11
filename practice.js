@@ -40,13 +40,12 @@
 
 const firstNonRepeatingLetter = (s) => {
     let lowercase = s.toLowerCase()
-    let repeat = []
-    // let unique = []
-    for (i = 0; i < lowercase.length; i++) {
-        if (lowercase[i] != lowercase[i]) {
-            return lowercase[i]
-        } else if (lowercase.length === 0){
-            return lowercase[0]
-        }
+    for (let i = 0; i < lowercase.length; i++) {
+        // console.log(lowercase.indexOf(lowercase.charAt(i)))
+        console.log(lowercase.lastIndexOf(lowercase.charAt(i)))
+        // if (lowercase.indexOf(lowercase.charAt(i)) === lowercase.lastIndexOf(lowercase.charAt(i))){
+        //     return lowercase.charAt(i);
+        // }
     }
 }
+firstNonRepeatingLetter('abcdcba')
