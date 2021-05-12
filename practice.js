@@ -38,14 +38,25 @@
 // }
 // theFinalCountdown(5, 5)
 
-const firstNonRepeatingLetter = (s) => {
-    let lowercase = s.toLowerCase()
-    for (let i = 0; i < lowercase.length; i++) {
-        // console.log(lowercase.indexOf(lowercase.charAt(i)))
-        console.log(lowercase.lastIndexOf(lowercase.charAt(i)))
-        // if (lowercase.indexOf(lowercase.charAt(i)) === lowercase.lastIndexOf(lowercase.charAt(i))){
-        //     return lowercase.charAt(i);
-        // }
+// const firstNonRepeatingLetter = (s) => {
+//     let lowercase = s.toLowerCase()
+//     for (let i = 0; i < lowercase.length; i++) {
+//         // console.log(lowercase.indexOf(lowercase.charAt(i)))
+//         console.log(lowercase.lastIndexOf(lowercase.charAt(i)))
+//         // if (lowercase.indexOf(lowercase.charAt(i)) === lowercase.lastIndexOf(lowercase.charAt(i))){
+//         //     return lowercase.charAt(i);
+//         // }
+//     }
+// }
+// firstNonRepeatingLetter('abcdcba')
+
+// let alphaCypher = {'a': 28, 'b': 29, 'c': 30, 'd': 31, 'e': 32, 'f': 33, 'g': 34, 'h': 35, 'i': 36, 'j': 37, 'k': 38, 'l': 39, 'm': 28, 'n': 29, 'o': 28, 'p': 29, 'q': 30, 'r': 31, 's': 32, 't': 33, 'u': 34, 'v': 35, 'w': 36, 'x': 25, 'y': 26, 'z': 27}
+const rot13 = (message) => {
+    const alpha = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
+    const alphaCypher = 'NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm'
+    let encoded = ''
+    for (let i=0; i < message.length; i++) {
+        const index = alpha.indexOf(message[i]);
+        encoded += alphaCypher[index];
     }
 }
-firstNonRepeatingLetter('abcdcba')
