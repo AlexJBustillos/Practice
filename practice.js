@@ -56,7 +56,13 @@ const rot13 = (message) => {
     const alphaCypher = 'NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm'
     let encoded = ''
     for (let i=0; i < message.length; i++) {
-        const index = alpha.indexOf(message[i]);
-        encoded += alphaCypher[index];
+        if (message[i].match(/[^a-zA-z]/)) {
+            const index = alpha.indexOf(message[i]);
+            encoded += alphaCypher[index];
+
+        } else {
+            return message[i]
+        }
     }
+    return encoded
 }
