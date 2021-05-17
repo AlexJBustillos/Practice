@@ -66,3 +66,12 @@ const rot13 = (message) => {
     }
     return encoded
 }
+
+const moveZeros = (arr) => {
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === 0) {
+            arr.push(arr.splice(arr.indexOf(arr[i]), 1)[0])
+        }
+    }
+    return arr
+}
