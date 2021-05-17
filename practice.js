@@ -75,3 +75,23 @@ const moveZeros = (arr) => {
     }
     return arr
 }
+
+const validParentheses = (parens) => {
+    const holder = []
+    const openBrackets = ['(']
+    const closedBrackets = [')']
+    for ( let bracket of parens) {
+        if(openBrackets.includes(bracket)) {
+            holder.push(bracket)
+        } else if (closedBrackets.includes(letter)) {
+            const openPair = openBrackets[closedBrackets.indexOf(letter)]
+            if (holder[holder.length - 1] === openPair) {
+                holder.splice(-1, 1)
+            } else {
+                holder.push(bracket)
+                break
+            }
+        }
+    }
+    return (holder.length === 0)
+}
