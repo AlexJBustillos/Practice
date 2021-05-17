@@ -77,21 +77,28 @@ const moveZeros = (arr) => {
 }
 
 const validParentheses = (parens) => {
-    const holder = []
-    const openBrackets = ['(']
-    const closedBrackets = [')']
-    for ( let bracket of parens) {
-        if(openBrackets.includes(bracket)) {
-            holder.push(bracket)
-        } else if (closedBrackets.includes(letter)) {
-            const openPair = openBrackets[closedBrackets.indexOf(letter)]
-            if (holder[holder.length - 1] === openPair) {
-                holder.splice(-1, 1)
-            } else {
-                holder.push(bracket)
-                break
-            }
-        }
+    // const holder = []
+    // const openBrackets = ['(']
+    // const closedBrackets = [')']
+    // for ( let bracket of parens) {
+    //     if(openBrackets.includes(bracket)) {
+    //         holder.push(bracket)
+    //     } else if (closedBrackets.includes(letter)) {
+    //         const openPair = openBrackets[closedBrackets.indexOf(letter)]
+    //         if (holder[holder.length - 1] === openPair) {
+    //             holder.splice(-1, 1)
+    //         } else {
+    //             holder.push(bracket)
+    //             break
+    //         }
+    //     }
+    // }
+    // return (holder.length === 0)
+    let n = 0
+    for (let i = 0; i < parens.length; i++) {
+        if (parens[i] === '(') n++;
+        if (parens[i] === ')') n--;
+        if (n < 0) return false;
     }
-    return (holder.length === 0)
+    return n == 0;
 }
