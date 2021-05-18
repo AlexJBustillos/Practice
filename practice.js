@@ -102,3 +102,17 @@ const validParentheses = (parens) => {
     }
     return n == 0;
 }
+
+const duplicateCount = (text) => {
+    // console.log(text)
+    // const result = [];
+    // const strArr = text.toLowerCase().split("").sort().join("").match(/(.)\1+/g);
+  
+    // if (strArr != null) {
+    //   strArr.forEach((elem) => {
+    //     result.push(elem[0]);
+    //   });
+    // }
+    // return result.length;
+    return (text.toLowerCase().split('').sort().join('').match(/([^])\1+/g) || []).length;
+}
