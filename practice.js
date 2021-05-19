@@ -116,3 +116,19 @@ const duplicateCount = (text) => {
     // return result.length;
     return (text.toLowerCase().split('').sort().join('').match(/([^])\1+/g) || []).length;
 }
+
+a1 = [121, 144, 19, 161, 19, 144, 19, 11];
+a2 = [11*11, 121*121, 144*144, 19*19, 161*161, 19*19, 144*144, 19*19];
+const comp = (array1, array2) => {
+    if(!array1 || !array2) return false;
+    console.log(array1);
+    array1 = array1.map(t => t**2).sort((a,b)=>a-b);
+    console.log(array1)
+    console.log(array2)
+    array2 = array2.sort((a,b)=>a-b);
+    console.log(array2);
+
+    for(let i=0;i<array1.length;i++){if(array1[i] !== array2[i])return false}
+    return true;
+}
+console.log(comp(a1, a2))
