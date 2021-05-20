@@ -132,3 +132,15 @@ const comp = (array1, array2) => {
     return true;
 }
 console.log(comp(a1, a2))
+
+// how to validate password with regex
+function validate(password) {
+    // return  /^[A-Za-z0-9]{6,}$/.test(password) &&
+    //         /[A-Z]+/           .test(password) &&
+    //         /[a-z]+/           .test(password) &&
+    //         /[0-9]+/           .test(password) ;
+
+    
+    return /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[a-zA-Z0-9]{6,}$/.test(password);
+      
+  }
