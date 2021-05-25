@@ -166,3 +166,16 @@ function validate(password) {
     
     return biggestCount || null;
   }
+
+  const solutions = (input, markers) => {
+      let arr = input.split('\n')
+
+      for (let i = 0; i < markers.length; i++) {
+          arr = arr.map((el) => {
+            let ind = el.indexOf(markers[i]);
+            if (ind !== -1) return el.substring(0, ind);
+            else return el.replace(/\s*S/,'')  
+          })
+      }
+      return arr.join('\n').trim()
+  }
