@@ -179,3 +179,48 @@ function validate(password) {
       }
       return arr.join('\n').trim()
   }
+
+// practice
+
+// Given an array of numbers
+// Find the highest number
+
+const highNumber = (arrayNumber) => {
+    // make variable equal to 0
+      let highestNumber = 0;
+    // forLoop, compare current element to variable
+      for (i = 0; i < arrayNumber.length; i++) {
+          // assign highest element to variable
+        let num = arrayNumber[i] 
+        // if(num > highestNumber){
+        //   highestNumber = num
+        // }
+        
+        highestNumber = (num > highestNumber) ? num : highestNumber
+      }
+      // return variable
+      return highestNumber
+}
+    
+highNumber([1, 5, 9, 4, 6])
+
+// Create a function that takes a string and 
+// returns a string in which each character is
+// repeated once.
+
+
+const duplicate = (string) => {
+    // take string, convert string into array
+    let stringArray = string.split('')	
+    let duplicateString = '';
+    
+    // do a for loop, for each iteration add the same index
+    for (i = 0; i < stringArray.length; i++) {
+        let letter = stringArray[i];
+        duplicateString += (letter + letter)
+    }
+    // return converted array back to string
+    return duplicateString
+    }
+    
+duplicate('hello')
