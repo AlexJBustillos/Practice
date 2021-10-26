@@ -224,3 +224,21 @@ const duplicate = (string) => {
     }
     
 duplicate('hello')
+
+function getCHar(c){
+  return String.fromCharCode(c);
+
+}
+
+const seatsInTheater = (nCols, nRows, col, row) => {
+  return (nCols - col + 1) * (nRows - row);
+}
+
+const points = (games) => {
+  games.reduce((acc, game) => {
+    const [x, y] = game.split(':');
+    const points = x > y ? 3 : x === y ? 1 : 0;
+    acc += points;
+    return acc;
+  }, 0);
+}
