@@ -280,3 +280,9 @@ const isSolved = (board) => {
     return 0
   }
 }
+
+const minMax = (arr) => {
+  min = Math.min( ...arr )
+  max = Math.max( ...arr )
+  return [min, max]
+}
