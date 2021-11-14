@@ -286,3 +286,7 @@ const minMax = (arr) => {
   max = Math.max( ...arr )
   return [min, max]
 }
+
+const binary = (decimal) => {
+  return decimal.toString(2)
+}
