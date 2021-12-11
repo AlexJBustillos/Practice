@@ -298,3 +298,32 @@ const binary = (decimal) => {
 function addUp(num) {
   return (num * (num + 1))/2;
 }
+
+// Write a function that takes in a string of one or more words, and returns the same string, but with all five or more letter words reversed (Just like the name of this Kata). Strings passed in will consist of only letters and spaces. Spaces will be included only when more than one word is present.
+
+// Examples: spinWords( "Hey fellow warriors" ) => returns "Hey wollef sroirraw" spinWords( "This is a test") => returns "This is a test" spinWords( "This is another test" )=> returns "This is rehtona test"
+
+function spinWords(string){
+  let newSentenceArray = []
+  //1. split the sentence into words array
+  let wordArray = string.split(' ')
+  //2. go through the words  
+  for(let i = 0; i < wordArray.length ; i++){
+    //3. find if it has 5 or more letters
+    let word = wordArray[i]
+    if(word.length >= 5){
+    //4. 
+    //a. split the word into an array
+    let letterArray = word.split('')
+    //b. then reverse it
+    //c. revert into string
+      word = letterArray.reverse().join('')
+    }
+    //5. push words into a new array
+    newSentenceArray.push(word)
+    //6. revert back into a string
+  }
+  return newSentenceArray.join(' ')
+}
+
+spinWords('hey fellow warriors')
