@@ -327,3 +327,31 @@ function spinWords(string){
 }
 
 spinWords('hey fellow warriors')
+
+
+
+
+//-----------------------------------Practice-----------------------------------------
+const myFunc = () => {
+  console.log('hello')
+}
+
+// setTimeout
+  setTimeout(() => {
+    clearInterval(interval)
+  }, 4000)
+
+  
+// setInterval 
+    let startTime = 0;
+
+    const interval = setInterval(() => {
+      startTime ++;
+      console.log(startTime);
+      
+      // if(startTime === 3) {
+      //   clearInterval(interval)
+      // }
+    }, 1000)
+
+// clearInterval
