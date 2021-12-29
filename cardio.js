@@ -110,3 +110,49 @@ function fizzbuzz(array) {
       }
     }
   }
+
+  //----------------API Practice ------------------
+  const movieArray = arr => {
+    console.log(arr)
+    arr.forEach((movie) => {
+      // create container element
+      let containerDiv = document.createElement("DIV")
+      containerDiv.setAttribute('id', 'container')
+      // create h1 element
+      let movieTitle = document.createElement("H1")
+      movieTitle.setAttribute('id', 'title')
+      // add title string
+      movieTitle.innerHTML = movie.title
+      // create image tag
+      let movieImg = document.createElement("IMG")
+      movieImg.setAttribute('id', 'mmg')
+      // add the image string
+      movieImg.src = movie.image
+      // create a tag
+      let movieLink = document.createElement("A")
+      // add link string
+      // movieLink.innerHTML(movie.link)
+      // append to body
+      
+      containerDiv.append(movieTitle)
+      containerDiv.append(movieImg)
+      containerDiv.append(movieLink)
+      document.body.append(containerDiv)
+    })
+  }
+  
+  var requestOptions = {
+    method: 'GET',
+    redirect: 'follow'
+  };
+  
+   let movies;
+  
+  fetch('https://imdb-api.com/en/API/SearchMovie/k_koy9ix43/inception 2010', requestOptions)
+    .then(response => response.json())
+    .then(result => {
+      movies = result.results
+      movieArray(movies)
+      // call function(movies)
+    })
+    .catch(error => console.log('error', error));
