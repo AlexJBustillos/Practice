@@ -356,14 +356,20 @@
 
 // clearInterval
 
-function generateHashtag (str) {
+// function generateHashtag (str) {
 
-  var hashtag = str.split(' ').reduce(function(tag, word) {
-    console.log('>', tag, str, word)
-    return tag + word.charAt(0).toUpperCase() + word.substring(1);
-    // console.log('>>>>', hashtag)
-  }, '#');
-  console.log('>>', hashtag)
-  return hashtag.length == 1 || hashtag.length > 140 ? false : hashtag;
+//   var hashtag = str.split(' ').reduce(function(tag, word) {
+//     console.log('>', tag, str, word)
+//     return tag + word.charAt(0).toUpperCase() + word.substring(1);
+//     // console.log('>>>>', hashtag)
+//   }, '#');
+//   console.log('>>', hashtag)
+//   return hashtag.length == 1 || hashtag.length > 140 ? false : hashtag;
+// }
+// console.log(generateHashtag('great work butthead'))
+
+function cakes(recipe, available) {
+  return Object.keys(recipe).reduce(function(val, ingredient) {
+    return Math.min(Math.floor(available[ingredient] / recipe[ingredient] || 0), val)
+  }, Infinity)  
 }
-console.log(generateHashtag('great work butthead'))
