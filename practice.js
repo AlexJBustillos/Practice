@@ -368,8 +368,35 @@
 // }
 // console.log(generateHashtag('great work butthead'))
 
-function cakes(recipe, available) {
-  return Object.keys(recipe).reduce(function(val, ingredient) {
-    return Math.min(Math.floor(available[ingredient] / recipe[ingredient] || 0), val)
-  }, Infinity)  
+// function cakes(recipe, available) {
+//   return Object.keys(recipe).reduce(function(val, ingredient) {
+//     return Math.min(Math.floor(available[ingredient] / recipe[ingredient] || 0), val)
+//   }, Infinity)  
+// }
+
+////////////////////////// BUS ON BUS OFF ///////////////////
+var number = function(busStops){
+  var totalPeople = 0;
+  for (var i=0; i<busStops.length; i++) {
+    totalPeople += busStops[i][0];
+    totalPeople -= busStops[i][1];
+  }
+  return totalPeople;
+}
+
+///My Answer ////
+
+var number = function(busStops){
+  let arrayOn = []
+  let arrayOff = []
+  const reducer = (accumulator, curr) => accumulator + curr
+  for (i = 0; i < busStops.length; i++) {
+    let peopleOn = busStops[i][0]
+    let peopleOff = busStops[i][1]
+    arrayOn.push(peopleOn)
+    arrayOff.push(peopleOff)
+    
+    
+  }
+  return arrayOn.reduce(reducer) - arrayOff.reduce(reducer) 
 }
